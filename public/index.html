@@ -1,47 +1,59 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ember Studios</title>
 
-    <!-- Particle.js CDN -->
+    <!-- Include a particle.js library for ember effects -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <link rel="stylesheet" href="styles.css">
 
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
-
     <script>
-    if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker.register("/uv/sw.js", {
-                scope: __uv$config.prefix,
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("/uv/sw.js", {
+                    scope: __uv$config.prefix,
+                });
             });
-        });
-    }
+        }
     </script>
-
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div id="particle-container"></div>
 
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
+    <header class="header">
+        <h1>Ember Studios</h1>
+        <p>Your gateway to tech and innovation</p>
+    </header>
 
-    <!-- Modal for iframe -->
-    <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <iframe id="iframeWindow" class="iframeWindow"></iframe>
+    <main class="main-content">
+        <div class="url-container">
+            <input type="text" id="urlInput" placeholder="Enter URL here">
+            <button id="searchButton">Search</button>
         </div>
-    </div>
 
-    <div class="input-container">
-        <input type="text" id="urlInput" placeholder="Enter URL here">
-        <button id="searchButton">Search</button>
-    </div>
+        <!-- Modal for iframe -->
+        <div id="iframeModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <iframe id="iframeWindow" class="iframeWindow"></iframe>
+            </div>
+        </div>
+    </main>
 
-    <script src="example.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+    <section id="about-us" class="about-us">
+        <h2>About Us</h2>
+        <p>
+            Welcome to Ember Studios, where innovation meets design. We specialize in creating cutting-edge solutions 
+            that ignite your digital experience. Our passion for technology drives us to deliver excellence in every project.
+        </p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Ember Studios. All rights reserved.</p>
+    </footer>
+
+    <script src=''>
