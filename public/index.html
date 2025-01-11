@@ -1,26 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <script src="/uv/uv.bundle.js"></script>
-        <script src="/uv/uv.config.js"></script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ember Studios</title>
 
-        <script>
-        if ("serviceWorker" in navigator) {
-            window.addEventListener("load", () => {
-                navigator.serviceWorker.register("/uv/sw.js", {
-                    scope: __uv$config.prefix,
-                });
+    <!-- Particle.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    
+    <script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("/uv/sw.js", {
+                scope: __uv$config.prefix,
             });
-        }
-        </script>
+        });
+    }
+    </script>
 
-        <link rel="stylesheet" href="example.css">
-    </head>
-    <body>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Modal for iframe -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <iframe id="iframeWindow" class="iframeWindow"></iframe>
+        </div>
+    </div>
+
+    <div class="input-container">
         <input type="text" id="urlInput" placeholder="Enter URL here">
-        <button id="searchButton">Search Text</button>
+        <button id="searchButton">Search</button>
+    </div>
 
-        <iframe id="iframeWindow" class="iframeWindow"></iframe>
-    </body>
     <script src="example.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
