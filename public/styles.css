@@ -1,124 +1,104 @@
-/* Base Styles */
+/* General body styling */
 body {
-    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #000;
-    color: #fff;
-    overflow-x: hidden;
-    animation: fadeIn 1s ease-out;
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+    background: #000000;
+    overflow: hidden;
 }
 
-/* Particle Background */
-#particles-js {
+/* Particle background */
+#particle-container {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
+    background: linear-gradient(180deg, #1a1a1a, #000000);
 }
 
-/* Modal Styles */
+/* Header styling */
+.header {
+    text-align: center;
+    padding: 20px;
+    background: #1a1a1a;
+    border-bottom: 2px solid #ff4500;
+}
+
+.header h1 {
+    color: #ff4500;
+    font-size: 2.5rem;
+}
+
+/* Main content */
+.main-content {
+    text-align: center;
+    padding: 20px;
+}
+
+.url-container input {
+    width: 300px;
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid #ff4500;
+    border-radius: 5px;
+    background: #1a1a1a;
+    color: white;
+}
+
+.url-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #ff4500;
+    color: white;
+    cursor: pointer;
+}
+
+.url-container button:hover {
+    background: #ff6347;
+}
+
+/* Modal styling */
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
-    left: 0;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.8);
-    overflow: auto;
-    padding-top: 60px;
-    animation: modalFadeIn 0.5s ease-out;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
 }
 
 .modal-content {
-    background-color: #222;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 800px;
     position: relative;
-    animation: contentSlideIn 0.5s ease-out;
+    width: 80%;
+    height: 80%;
+    margin: 5% auto;
+    background: #1a1a1a;
+    border-radius: 10px;
+    border: 2px solid #ff4500;
+    overflow: hidden;
 }
 
-.close-btn {
-    color: #fff;
-    font-size: 30px;
-    font-weight: bold;
+.close {
     position: absolute;
-    top: 0;
-    right: 10px;
-}
-
-.close-btn:hover,
-.close-btn:focus {
-    color: #f1f1f1;
-    text-decoration: none;
+    top: 10px;
+    right: 20px;
+    color: #ffffff;
+    font-size: 24px;
     cursor: pointer;
 }
 
-/* Input and Button Styles */
-.input-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-    animation: fadeIn 1s ease-out;
-}
-
-#urlInput {
+/* Footer */
+.footer {
+    text-align: center;
     padding: 10px;
-    font-size: 16px;
-    width: 300px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
+    background: #1a1a1a;
+    border-top: 2px solid #ff4500;
 }
 
-#searchButton {
-    padding: 10px;
-    font-size: 16px;
-    margin-left: 10px;
-    background-color: #ff4500;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#searchButton:hover {
-    background-color: #ff6347;
-}
-
-/* Modal Animation */
-@keyframes modalFadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-@keyframes contentSlideIn {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(0); }
-}
-
-/* Page Load Animation */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    .input-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #urlInput, #searchButton {
-        width: 80%;
-        margin: 10px 0;
-    }
+.footer p {
+    margin: 0;
+    color: #ff4500;
 }
