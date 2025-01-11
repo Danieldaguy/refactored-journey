@@ -12,8 +12,6 @@ document.getElementById("searchButton").onclick = function(event) {
         }
     }
 
-    document.getElementById("loading").style.display = "flex"; // Show loading spinner
-    document.getElementById("iframeWindow").style.display = "none"; // Hide iframe until loaded
     document.getElementById("iframeWindow").src = __uv$config.prefix + __uv$config.encodeUrl(url);
     openModal();
 };
