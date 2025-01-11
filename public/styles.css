@@ -1,4 +1,78 @@
-/* Background Particle Effect */
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    color: #fff;
+    overflow-x: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Loading Spinner Animation */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.loading-spinner {
+    border: 6px solid rgba(255, 255, 255, 0.3);
+    border-top: 6px solid #ff4500;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 404 Page Styles */
+.error-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+.error-heading {
+    font-size: 80px;
+    margin: 0;
+    color: #ff4500;
+}
+
+.error-message {
+    font-size: 24px;
+    color: #ccc;
+}
+
+button {
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #ff6347;
+}
+
+/* Particle Background */
 #particles-js {
     position: absolute;
     top: 0;
@@ -20,6 +94,7 @@
     background-color: rgba(0,0,0,0.8);
     overflow: auto;
     padding-top: 60px;
+    animation: modalFadeIn 0.5s ease-out;
 }
 
 .modal-content {
@@ -30,6 +105,7 @@
     width: 80%;
     max-width: 800px;
     position: relative;
+    animation: contentSlideIn 0.5s ease-out;
 }
 
 .close-btn {
@@ -53,6 +129,7 @@
     display: flex;
     justify-content: center;
     margin-top: 100px;
+    animation: fadeIn 1s ease-out;
 }
 
 #urlInput {
@@ -61,7 +138,7 @@
     width: 300px;
     border: none;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5); /* Ember-like glow */
+    box-shadow: 0 0 10px rgba(255, 69, 0, 0.5);
 }
 
 #searchButton {
@@ -79,12 +156,32 @@
     background-color: #ff6347;
 }
 
-/* Smooth animation on load */
+/* Modal Animation */
+@keyframes modalFadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes contentSlideIn {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+/* Page Load Animation */
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
 }
 
-body {
-    animation: fadeIn 1s ease-out;
+/* Responsiveness */
+@media (max-width: 768px) {
+    .input-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #urlInput, #searchButton {
+        width: 80%;
+        margin: 10px 0;
+    }
 }
